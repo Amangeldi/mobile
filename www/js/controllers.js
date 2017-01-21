@@ -7030,8 +7030,17 @@ angular.module('app.controllers', [])
         $scope.diliTmRu = globalPeremenFac.getKatDiliTmRu();
         $scope.diliTmRuT = false;
 
-        //SURAT GOSMAK
-        //Suratlaň spisegi
+		
+		
+		
+		
+		
+        //Вот сдесь вот нужно добавить функцию для добавления фото на сервер, можете менять все что угодно, удалять, добавлять
+		// Нужно добавить 2 кнопки "выбрать" (Выбрать из файловой системы фото, которое нужно отправить) и "добавить"(отправить на сервер выбранные фото)
+		//Ограничение до 10 фото.
+		// Нужно еще добавить в массив ответы от сервера при получении фото., 
+		// $http({method : 'POST', url: 'http://a0109349.xsph.ru/surat', data : fd, transformRequest:angular.identity, headers:{'Content-Type':undefined}})
+        // Начало функционала 
         $scope.iFile=[];
         //Suratlar spisegi mahsimuma barsa knopkany gizlemeli
         $scope.maxImgBoldy = false;
@@ -7060,7 +7069,6 @@ angular.module('app.controllers', [])
             fd.append('file', $scope.filesNew);
             var request = $http({
                 method : 'POST',
-                // url: '../bat/php_files/upload.php',
                 url: 'http://a0109349.xsph.ru/surat',
                 data : fd,
                 transformRequest:angular.identity,
@@ -7109,6 +7117,7 @@ angular.module('app.controllers', [])
         angular.element(document).ready(function(){
             $scope.read();
         });
+		//Конец функционала. менять нужно до этого место. Остальное другой функционал.
 
         // $scope.modelName = facAutoModel.gaytarModeller().query();
         // $scope.modelName = $scope.iResource.query();
