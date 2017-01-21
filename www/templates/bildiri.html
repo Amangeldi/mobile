@@ -1,0 +1,82 @@
+<ion-view title="Bildiriş" id="page10">
+  <ion-content padding="true" class="has-header">
+
+    <div ng-show="diliTmRu=='TM'">
+      <form id="bildiri-form11" class="list" ng-repeat="ot in otdelnySQL"> <!--| filter:{id:idUser}-->
+        <!--<button id="bildiri-button13" style="border-radius:50px 50px 50px 50px;" class="{{ot.yaraya | yurejikBaYok}}">-->
+
+        </button><div ng-if="yarayamy===true"><button id="home-button16" class="gownumeYaraya button button-positive button-small button-outline icon ion-heart"></button></div>
+        <div ng-if="yarayamy===true">BAR</div>
+        <div ng-if="yarayamy==='false'">YOK</div>
+        <div ng-if="yarayamy=='false'"><button id="home-button17" class="gownumeYaraya button button-positive button-small button-outline icon ion-ios-heart-outline"></button></div>
+
+        <div>
+          <!--<img ng-src="http://a0109349.xsph.ru/img/surat_{{ot.img1}}" width="100%" height="150px" style="display: block; margin-left: auto; margin-right: auto;">-->
+          <img ng-src="img/noimg.png" width=100%" height=200px" class="suratHP" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>
+        <h5 id="bildiri-heading11" style="color:#000000;font-weight:600;text-align:center;" class="baha-taze">{{bahasyUyt(ot.bahasy, ot.pulBelligi) * 5000 | currency:"":0}} manat</h5>
+        <h5 id="bildiri-heading12" style="color:#FFFFFF;font-weight:600;text-align:center;" class="baha-kone">{{bahasyUyt(ot.bahasy, ot.pulBelligi) | currency:"":2}} manat</h5>
+        <h5 id="bildiri-heading18" style="color:#FFFFFF;font-weight:600;text-align:center;" class="baha-kone">{{bahasyUyt(ot.bahasy, ot.pulBelligi) / 3.5 | currency:"$":2}}</h5>
+        <h3 id="bildiri-heading13" style="color:#000000;">{{ot.tawarAdy}}</h3>
+        <h5 id="bildiri-heading14" style="color:#000000;">Ýeri: {{ot.welayat}} <trim ng-show="ot.etrap">, {{ot.etrap}}</trim><trim ng-show="ot.dayh">, {{ot.dayh}}</trim></h5>
+        <h5 id="bildiri-heading17" style="color:#000000;">Katalog: {{ot.katUra1}}, {{ot.katUra2}}, {{ot.katUra3}}</h5>
+        <h5 id="bildiri-heading16" style="color:#000000;">Wagty: {{ot.wagty | date : 'dd-MM-yyyy, HH:mm'}}</h5>
+        <h5 id="bildiri-heading15" style="color:#000000;">{{ot.maglumat}}</h5>
+
+
+        <span ng-include="magAdy"></span>
+
+        <ion-item class="item-avatar item-icon-right stable" id="bildiri-list-item41" ui-sref="menu.awtoryHemmeSergileri">
+          <img src="img/6sAdfss6Rruh8kFYw5Ea_wAhTo1fd8gQ.jpg">
+          <h2stable>{{otdelniUser.name}}
+            <p>Awtoryň hemme sergisi</p>
+            <i class="icon ion-arrow-right-a" ></i>
+          </h2stable>
+        </ion-item>
+      </form>
+    </div>
+    <div ng-show="diliTmRu=='RU'">
+      <form id="bildiri-form21" class="list" ng-repeat="ot in otdelnySQL"> <!--| filter:{id:idUser}-->
+        <!--<button id="bildiri-button13" style="border-radius:50px 50px 50px 50px;" class="{{ot.yaraya | yurejikBaYok}}">-->
+
+        </button><div ng-if="yarayamy===true"><button id="home-button26" class="gownumeYaraya button button-positive button-small button-outline icon ion-heart"></button></div>
+        <div ng-if="yarayamy===true">ЕСТЬ</div>
+        <div ng-if="yarayamy==='false'">НЕТ</div>
+        <div ng-if="yarayamy=='false'"><button id="home-button27" class="gownumeYaraya button button-positive button-small button-outline icon ion-ios-heart-outline"></button></div>
+
+        <div>
+          <!--<img ng-src="http://a0109349.xsph.ru/img/surat_{{ot.img1}}" width="100%" height="150px" style="display: block; margin-left: auto; margin-right: auto;">-->
+          <img ng-src="img/noimg.png" width=100%" height=200px" class="suratHP" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>
+        <h5 id="bildiri-heading21" style="color:#000000;font-weight:600;text-align:center;" class="baha-taze">{{bahasyUyt(ot.bahasy, ot.pulBelligi) * 5000 | currency:"":0}} манат</h5>
+        <h5 id="bildiri-heading22" style="color:#FFFFFF;font-weight:600;text-align:center;" class="baha-kone">{{bahasyUyt(ot.bahasy, ot.pulBelligi) | currency:"":2}} манат</h5>
+        <h5 id="bildiri-heading28" style="color:#FFFFFF;font-weight:600;text-align:center;" class="baha-kone">{{bahasyUyt(ot.bahasy, ot.pulBelligi) / 3.5 | currency:"$":2}}</h5>
+        <h3 id="bildiri-heading23" style="color:#000000;">{{ot.tawarAdy}}</h3>
+        <!--<h5 id="bildiri-heading24" style="color:#000000;">Место: {{ot.welayat}} <trim ng-show="ot.etrap">, {{ot.etrap}}</trim><trim ng-show="ot.dayh">, {{ot.dayh}}</trim></h5>-->
+        <h5 id="bildiri-heading24" style="color:#000000;">Место:
+            <trim  ng-repeat="wer in welayatlar | filter:{value: ot.welayat}">{{wer.valueru}}</trim>
+            <trim ng-show="ot.etrap" ng-repeat="etr in etraplar | filter:{value: ot.etrap}">, {{etr.valueru}}</trim>
+            <trim ng-show="ot.dayh" ng-repeat="dar in dayhan | filter:{value: ot.dayh}">, {{dar.valueru}}</trim></h5>
+        <h5 id="bildiri-heading27" style="color:#000000;">Каталог:
+            <trim  ng-repeat="ku1r in katUra1Rus | filter:{wariant: ot.katUra1}">{{ku1r.wariantRU}}</trim>
+            <trim ng-repeat="ku2r in katUra2Rus | filter:{wariant: ot.katUra2, haysykat: ot.katUra1}">, {{ku2r.wariantRU}}</trim>
+            <trim ng-repeat="ku3r in katUra3Rus | filter:{wariant: ot.katUra3, haysykat: ot.katUra2}">, {{ku3r.wariantRU}}</trim></h5>
+        <h5 id="bildiri-heading26" style="color:#000000;">Времья: {{ot.wagty | date : 'dd-MM-yyyy, HH:mm'}}</h5>
+        <h5 id="bildiri-heading25" style="color:#000000;">{{ot.maglumat}}</h5>
+
+
+        <span ng-include="magAdy"></span>
+
+        <ion-item class="item-avatar item-icon-right stable" id="bildiri-list-item21" ui-sref="menu.awtoryHemmeSergileri">
+          <img src="img/6sAdfss6Rruh8kFYw5Ea_wAhTo1fd8gQ.jpg">
+          <h2stable>{{otdelniUser.name}}
+            <p>Все объявление автора</p>
+            <i class="icon ion-arrow-right-a" ></i>
+          </h2stable>
+        </ion-item>
+      </form>
+    </div>
+    <!--<a ui-sref="menu.gWnNZeAranHarytlar" id="bildiri-button9" style="border-radius:50px 50px 50px 50px;" class="button button-positive button-large button-outline icon ion-android-call"></a>-->
+    <!--<a ui-sref="menu.sMS" id="bildiri-button10" style="border-radius:100px 100px 100px 100px;" class="button button-positive button-large button-outline icon ion-android-mail"></a>-->
+  </ion-content>
+</ion-view>

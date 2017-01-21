@@ -1,0 +1,51 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="side-menu21"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left" id="side-menu21">
+    <ion-content padding="false" style="top:0px !important;" class="side-menu-left side-menu-gradient">
+      <div class="spacer" style="width: 268px; height: 17px;"></div>
+
+
+      <div class="profile-image" ui-sref="login">
+        <img ng-src="img/avman.png" width="60px" height="auto" style="display:block;">
+      </div>
+      <h3 id="menu-heading8" style="color:#E4E4E4;font-weight:400;font-style:italic;text-align:right;"><div ng-show="userBaza.name">{{userBaza.name}}</div><div ng-hide="userBaza.name">Ady yok</div></h3>
+      <h4 id="menu-heading9" style="color:#DFDFDF;font-weight:600;text-align:right;"><div ng-show="userBaza.tel">{{userBaza.tel}}</div><div ng-hide="userBaza.tel">Telefon Yok</div></h4>
+
+
+      <div class="spacer" style="width: 268px; height: 21px;"></div>
+      <form id="menu-form6" class="list form-menu">
+        <ion-item class="item-icon-left item-icon-right light  side-menu-item" id="menu-list-item1" ui-sref="menu.meWakansiAlam" menu-close="">
+          <i class="icon ion-bag"></i>Meň wakansiýalam
+          <!--<i class="icon ion-android-add"></i>-->
+        </ion-item>
+        <ion-item class="item-icon-left light  side-menu-item" id="menu-list-item6" ui-sref="menu.gWnNZeAranHarytlar" menu-close="">
+          <i class="icon ion-ios-heart"></i>Göwnüme ýaranlary
+          <span class="item-note">123</span>
+        </ion-item>
+        <!--<ion-item class="item-icon-left light  side-menu-item" id="menu-list-item7" ui-sref="menu.gelenHatlar" menu-close="">-->
+          <!--<i class="icon ion-android-drafts"></i>Gelen Hatlar-->
+          <!--<span class="item-note">52</span>-->
+        <!--</ion-item>-->
+        <ion-item class="item-icon-left light  side-menu-item" id="menu-list-item5" ui-sref="menu.home" menu-close="">
+          <i class="icon ion-android-search"></i>Yza dolanmak</ion-item>
+        <ion-item class="item-icon-left light  side-menu-item" id="menu-list-item3" ui-sref="menu.ulanmagyDZgNleri" menu-close="">
+          <i class="icon ion-help"></i>Ulanmagyň Düzgunleri</ion-item>
+        <ion-item class="item-icon-left light  side-menu-item" id="menu-list-item2" ui-sref="menu.habarlaMakIn" menu-close="">
+          <i class="icon ion-information"></i>Habarlasmak ücin</ion-item>
+        <div class="spacer" style="width: 268px; height: 34px;"></div>
+        <ion-item class="item-icon-left light  side-menu-item" id="menu-list-item9" ui-sref="menu.slideShow" menu-close="">
+          <i class="icon ion-plus-circled"></i>Serga cykarmak</ion-item>
+        <ion-item class="item-icon-left light  side-menu-item" id="menu-list-item29" ui-sref="menu.gosmak" menu-close="">
+          <i class="icon ion-plus-circled"></i>Serga cykarmak</ion-item>
+      </form>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
