@@ -1,13 +1,14 @@
 body {
-    max-width: 380px; /* Максимальная ширина страницы в пикселах */ 
-    background-image: url(15549a14589707.5628669c64769.png)
+    background-image: url(Pattern%20Wallpapers%20for%20Galaxy%20S5.jpg);
+    background-size: cover;
+    padding: 10px;
    }
 .placeholder {
     color: #444;
 }
 #slick-login input[type="text"],#slick-login input[type="password"] {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
 	width: 80%;
 	height: 40px;
 	positon: relative;
@@ -48,8 +49,8 @@ body {
 	margin-top: 0px;
 }
 #slick-login input[type="submit"] {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
     width: 85%;
 	height: 45px;
 	margin-top: 14px;
@@ -93,4 +94,7 @@ body {
 
 	-webkit-box-shadow: inset 0px 1px 0px #93a9e9;
 	box-shadow: inset 0px 1px 0px #93a9e9;
+}
+#logo{
+    font: 95pt cursive;
 }
